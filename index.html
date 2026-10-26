@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NEXUS — Conectando talentos a oportunidades</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap">
+<style>
+:root{--bg:#070b1a;--bg2:#0c1226;--card:#101835;--line:#222c52;--tx:#e8ecff;--mut:#97a1c9;--blue:#2f6bff;--vio:#8b5cf6;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*:before,*:after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Sora,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;font-weight:300}
+h1,h2,h3{font-weight:600;line-height:1.15;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.w{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:96px 0;border-top:1px solid var(--line)}
+.grad{background:linear-gradient(90deg,var(--blue),var(--vio));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);max-width:20ch}
+.lead{color:var(--mut);max-width:58ch;margin-top:16px}
+.grid{display:grid;gap:16px;margin-top:48px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+.card h3{font-size:1.05rem;margin-bottom:8px}
+.card p{color:var(--mut);font-size:.92rem}
+.ic{width:36px;height:36px;border-radius:10px;background:rgba(47,107,255,.14);border:1px solid rgba(47,107,255,.4);display:grid;place-items:center;margin-bottom:16px}
+.ic svg{width:18px;height:18px;stroke:#7aa2ff;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,11,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;letter-spacing:.12em;text-decoration:none;color:var(--tx)}
+nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0;font-size:.85rem}
+nav a{color:var(--mut);text-decoration:none}nav a:hover,nav a:focus-visible{color:var(--tx)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--vio);outline-offset:3px}
+@media(max-width:760px){nav ul{display:none}}
+.hero{border:0;padding:72px 0 96px;position:relative;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+@media(max-width:860px){.hero .w{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(3rem,9vw,5.5rem);letter-spacing:.06em}
+.hero .tag{font-size:clamp(1.1rem,2.4vw,1.45rem);margin-top:12px;color:var(--tx)}
+.hero .lead{margin-top:20px}
+.btns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{padding:12px 22px;border-radius:999px;text-decoration:none;font-size:.9rem;font-weight:600;border:1px solid var(--line);color:var(--tx)}
+.btn.p{background:linear-gradient(90deg,var(--blue),var(--vio));border:0}
+.badge{display:inline-block;margin-top:28px;font-size:.78rem;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+.net{width:100%;height:auto}
+.net line{stroke:#3a4a8f;stroke-width:1}
+.net circle{fill:var(--bg2);stroke:var(--blue);stroke-width:1.5}
+.net .v{stroke:var(--vio)}
+.net .core{fill:url(#cg);stroke:none}
+@media(prefers-reduced-motion:no-preference){.net .core{animation:pl 3.2s ease-in-out infinite;transform-origin:200px 200px}}
+@keyframes pl{50%{transform:scale(1.18);opacity:.8}}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;position:relative}
+.step{padding:0 10px;text-align:center;position:relative}
+.step:not(:last-child):after{content:"";position:absolute;top:22px;left:calc(50% + 28px);right:calc(-50% + 28px);height:1px;background:linear-gradient(90deg,var(--blue),var(--vio))}
+.dot{width:44px;height:44px;margin:0 auto 16px;border-radius:50%;background:var(--card);border:1px solid var(--blue);display:grid;place-items:center;font-weight:600;font-size:.9rem}
+.step h3{font-size:.95rem;margin-bottom:6px}.step p{font-size:.82rem;color:var(--mut)}
+@media(max-width:760px){.flow{grid-template-columns:1fr;gap:28px}.step{text-align:left;display:grid;grid-template-columns:44px 1fr;gap:0 16px}.dot{margin:0;grid-row:span 2}.step:not(:last-child):after{display:none}}
+.quote{font-size:clamp(1.3rem,3vw,2rem);font-weight:600;max-width:28ch;margin-top:40px;padding-left:24px;border-left:3px solid var(--vio);letter-spacing:-.01em}
+.mock{margin-top:20px;border-top:1px dashed var(--line);padding-top:16px;font-size:.78rem}
+.chip{display:inline-block;padding:3px 10px;border-radius:999px;background:rgba(139,92,246,.16);border:1px solid rgba(139,92,246,.4);margin:0 4px 4px 0;color:#c9b6ff}
+.bar{height:30px;border:1px solid var(--line);border-radius:8px;padding:5px 10px;color:var(--mut)}
+.av{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--vio));font-size:.7rem;font-weight:600;margin-right:-6px;border:2px solid var(--card)}
+.bub{padding:6px 10px;border-radius:10px;background:#18224a;margin-bottom:6px;width:max-content;max-width:85%}.bub.r{background:rgba(47,107,255,.35);margin-left:auto}
+.task{display:flex;gap:8px;align-items:center;margin-bottom:6px}.task i{width:12px;height:12px;border:1.5px solid var(--blue);border-radius:3px;flex:none}.task.d i{background:var(--blue)}
+.pc{border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin-bottom:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:48px}
+@media(max-width:760px){.two{grid-template-columns:1fr;gap:32px}}
+.two h3{font-size:1.1rem;margin-bottom:16px}
+.li{list-style:none;margin:0;padding:0}.li li{padding:14px 0;border-bottom:1px solid var(--line);color:var(--mut);font-size:.95rem}.li li b{color:var(--tx);font-weight:600}
+.sc{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin-top:48px}
+.sc .card{display:flex;gap:16px;padding:20px}.sc .card h3{margin:0 0 4px;font-size:.98rem}
+.role{font-size:.8rem;color:#9db8ff;margin-bottom:10px;display:block}
+.name{font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.sp{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:48px;position:relative}
+.sp .card{border-top:2px solid var(--blue)}.sp .card:nth-child(even){border-top-color:var(--vio)}
+.sp small{color:var(--mut);display:block;margin-bottom:6px;font-size:.78rem}
+.sp ul{margin:12px 0 0;padding-left:18px;color:var(--mut);font-size:.88rem}
+.end{text-align:center;padding:120px 0;background:radial-gradient(60% 60% at 50% 0,rgba(139,92,246,.18),transparent)}
+.end h2{max-width:22ch;margin:0 auto;font-size:clamp(1.9rem,5vw,3.2rem)}
+.end .lead{margin:20px auto 0}
+.team{margin-top:40px;color:var(--mut);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--mut);font-size:.8rem;text-align:center}
+</style>
+</head>
+<body>
+<nav><div class="w"><a class="logo" href="#topo">NEXUS</a>
+<ul><li><a href="#problema">Problema</a></li><li><a href="#solucao">Solução</a></li><li><a href="#funciona">Como funciona</a></li><li><a href="#recursos">Funcionalidades</a></li><li><a href="#scrum">Scrum</a></li><li><a href="#equipe">Equipe</a></li><li><a href="#plano">Plano</a></li></ul></div></nav>
+
+<header class="hero" id="topo"><div class="w">
+<div>
+<h1 class="grad">NEXUS</h1>
+<p class="tag">Conectando talentos a oportunidades</p>
+<p class="lead">Uma plataforma para transformar ideias em projetos colaborativos, reunindo estudantes com habilidades e interesses complementares.</p>
+<div class="btns"><a class="btn p" href="#solucao">Conhecer a proposta</a><a class="btn" href="#equipe">Ver a equipe</a></div>
+<span class="badge">Proposta de produto em desenvolvimento com Scrum</span>
+</div>
+<svg class="net" viewBox="0 0 400 400" role="img" aria-label="Rede de nós conectados ao redor de um ponto central">
+<defs><radialGradient id="cg"><stop offset="0" stop-color="#8b5cf6"/><stop offset="1" stop-color="#2f6bff"/></radialGradient></defs>
+<g><line x1="200" y1="200" x2="80" y2="90"/><line x1="200" y1="200" x2="320" y2="80"/><line x1="200" y1="200" x2="350" y2="220"/><line x1="200" y1="200" x2="290" y2="340"/><line x1="200" y1="200" x2="110" y2="330"/><line x1="200" y1="200" x2="45" y2="210"/>
+<line x1="80" y1="90" x2="320" y2="80"/><line x1="320" y1="80" x2="350" y2="220"/><line x1="350" y1="220" x2="290" y2="340"/><line x1="290" y1="340" x2="110" y2="330"/><line x1="110" y1="330" x2="45" y2="210"/><line x1="45" y1="210" x2="80" y2="90"/></g>
+<circle class="core" cx="200" cy="200" r="22"/>
+<circle cx="80" cy="90" r="10"/><circle class="v" cx="320" cy="80" r="12"/><circle cx="350" cy="220" r="9"/><circle class="v" cx="290" cy="340" r="11"/><circle cx="110" cy="330" r="10"/><circle class="v" cx="45" cy="210" r="8"/>
+</svg>
+</div></header>
+
+<section id="problema"><div class="w">
+<h2>Boas ideias param quando falta a equipe certa</h2>
+<p class="lead">Muitos estudantes têm projetos em mente, mas enfrentam obstáculos antes mesmo de começar.</p>
+<div class="grid g3">
+<div class="card"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><path d="M17 5v6M14 8h6"/></svg></div><h3>Falta de pessoas complementares</h3><p>É difícil encontrar colegas com as habilidades que a ideia precisa.</p></div>
+<div class="card"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1"/><rect x="14" y="4" width="7" height="7" rx="1"/><rect x="8" y="14" width="8" height="6" rx="1"/></svg></div><h3>Equipes desorganizadas</h3><p>Sem um lugar para dividir tarefas, o trabalho se espalha em vários aplicativos.</p></div>
+<div class="card"><div class="ic"><svg viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h3>Pouca visibilidade</h3><p>Projetos interessantes ficam restritos à sala e não chegam a quem poderia ajudar.</p></div>
+</div></div></section>
+
+<section id="solucao"><div class="w">
+<h2>O NEXUS conecta pessoas e projetos</h2>
+<p class="lead">Uma plataforma pensada para estudantes encontrarem colaboradores, formarem equipes e transformarem ideias em projetos concretos.</p>
+<p class="quote">Da ideia individual ao projeto colaborativo, em um só lugar.</p>
+</div></section>
+
+<section id="funciona"><div class="w">
+<h2>Como o site funciona</h2>
+<p class="lead">O fluxo previsto para quem usa o NEXUS, do cadastro ao projeto em andamento.</p>
+<div class="flow">
+<div class="step"><div class="dot">1</div><h3>Criar perfil</h3><p>Nome, curso e apresentação.</p></div>
+<div class="step"><div class="dot">2</div><h3>Cadastrar habilidades</h3><p>Habilidades e interesses.</p></div>
+<div class="step"><div class="dot">3</div><h3>Encontrar pessoas</h3><p>Busca por colaboradores.</p></div>
+<div class="step"><div class="dot">4</div><h3>Formar equipe</h3><p>Convites e papéis definidos.</p></div>
+<div class="step"><div class="dot">5</div><h3>Desenvolver o projeto</h3><p>Chat e painel de tarefas.</p></div>
+</div></div></section>
+
+<section id="recursos"><div class="w">
+<h2>Principais funcionalidades propostas</h2>
+<p class="lead">Telas conceituais do que o produto pretende oferecer. Ainda não estão implementadas.</p>
+<div class="grid g3">
+<div class="card"><h3>Perfis de habilidades</h3><p>Cada pessoa mostra o que sabe e o que quer aprender.</p><div class="mock"><span class="chip">Design</span><span class="chip">Programação</span><span class="chip">Redação</span><span class="chip">Vídeo</span></div></div>
+<div class="card"><h3>Busca de colaboradores</h3><p>Encontre pessoas por habilidade ou interesse.</p><div class="mock"><div class="bar">Buscar habilidade ou interesse</div></div></div>
+<div class="card"><h3>Mural de projetos</h3><p>Projetos ganham visibilidade e recebem interessados.</p><div class="mock"><div class="pc">Título do projeto<br><span style="color:var(--mut)">Procurando: design, programação</span></div><div class="pc">Outro projeto<br><span style="color:var(--mut)">Procurando: redação</span></div></div></div>
+<div class="card"><h3>Criação de equipes</h3><p>Reúna pessoas e defina o papel de cada uma.</p><div class="mock"><span class="av">A</span><span class="av">B</span><span class="av">C</span><span class="av">D</span></div></div>
+<div class="card"><h3>Chat</h3><p>Converse com a equipe sem sair da plataforma.</p><div class="mock"><div class="bub">Vamos definir as tarefas?</div><div class="bub r">Combinado.</div></div></div>
+<div class="card"><h3>Painel de tarefas</h3><p>Acompanhe o que falta, o que está em andamento e o que foi feito.</p><div class="mock"><div class="task d"><i></i>Definir escopo</div><div class="task"><i></i>Criar protótipo</div><div class="task"><i></i>Revisar entrega</div></div></div>
+</div></div></section>
+
+<section id="publico"><div class="w">
+<h2>Para quem é e o que nos diferencia</h2>
+<div class="two">
+<div><h3>Público-alvo</h3><ul class="li"><li><b>Estudantes</b> que querem criar ou participar de projetos.</li><li><b>Jovens criadores</b> com ideias que precisam de apoio.</li><li><b>Equipes escolares</b> que buscam organização.</li></ul></div>
+<div><h3>Diferenciais</h3><ul class="li"><li><b>Foco em colaboração</b>, não só em perfis individuais.</li><li><b>Descoberta de talentos</b> por habilidades e interesses.</li><li><b>Projetos organizados</b> em um só lugar.</li></ul></div>
+</div></div></section>
+
+<section id="scrum"><div class="w">
+<h2>Desenvolvimento com Scrum</h2>
+<p class="lead">O produto será construído em entregas incrementais, com ciclos curtos de planejamento, execução e revisão.</p>
+<div class="sc">
+<div class="card"><div><h3>Product Backlog</h3><p>Lista priorizada de tudo o que o produto pode ter.</p></div></div>
+<div class="card"><div><h3>Sprint Planning</h3><p>A equipe escolhe o que entregar na Sprint.</p></div></div>
+<div class="card"><div><h3>Desenvolvimento na Sprint</h3><p>Construção e teste das funcionalidades escolhidas.</p></div></div>
+<div class="card"><div><h3>Daily Scrum</h3><p>Alinhamento rápido para planejar o dia e expor impedimentos.</p></div></div>
+<div class="card"><div><h3>Sprint Review</h3><p>Apresentação do incremento e coleta de feedback.</p></div></div>
+<div class="card"><div><h3>Sprint Retrospective</h3><p>A equipe avalia o processo e define melhorias.</p></div></div>
+</div></div></section>
+
+<section id="equipe"><div class="w">
+<h2>Equipe e responsabilidades</h2>
+<div class="grid g3">
+<div class="card"><span class="role">Stakeholder</span><div class="name">Reinier Samir</div><p>Representa os interesses das partes interessadas.</p></div>
+<div class="card"><span class="role">Product Owner</span><div class="name">Enzo Miguel</div><p>Prioriza o backlog e maximiza o valor do produto.</p></div>
+<div class="card"><span class="role">Scrum Master</span><div class="name">Arthur Piffer</div><p>Facilita o Scrum e ajuda a remover impedimentos.</p></div>
+<div class="card" style="grid-column:1/-1"><span class="role">Developers</span><div class="name">Enzo Brizola, Eduardo e Juan</div><p>Projetam, desenvolvem, testam e integram as funcionalidades.</p></div>
+</div></div></section>
+
+<section id="plano"><div class="w">
+<h2>Plano de desenvolvimento</h2>
+<p class="lead">Quatro Sprints propostas. As entregas abaixo são previsões, não resultados já alcançados.</p>
+<div class="sp">
+<div class="card"><small>Sprint 1</small><h3>Estrutura e perfis</h3><ul><li>Estrutura do site</li><li>Perfis de usuários</li></ul></div>
+<div class="card"><small>Sprint 2</small><h3>Talentos e projetos</h3><ul><li>Busca de talentos</li><li>Mural de projetos</li></ul></div>
+<div class="card"><small>Sprint 3</small><h3>Equipes, chat e tarefas</h3><ul><li>Criação de equipes</li><li>Chat</li><li>Painel de tarefas</li></ul></div>
+<div class="card"><small>Sprint 4</small><h3>Testes e demonstração</h3><ul><li>Testes e ajustes</li><li>Demonstração final</li></ul></div>
+</div></div></section>
+
+<section class="end"><div class="w">
+<h2 class="grad">Nenhuma boa ideia precisa ficar parada por falta da equipe certa.</h2>
+<p class="lead">O NEXUS propõe unir perfis, projetos, equipes e tarefas em uma plataforma criada para estudantes e jovens criadores.</p>
+<p class="team">Reinier Samir · Enzo Miguel · Arthur Piffer · Enzo Brizola · Eduardo · Juan</p>
+</div></section>
+<footer><div class="w">NEXUS, projeto acadêmico de desenvolvimento de produto com Scrum. Conteúdo conceitual: o produto ainda não foi desenvolvido.</div></footer>
+</body>
+</html>
